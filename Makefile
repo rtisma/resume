@@ -29,6 +29,7 @@ view : $(NAME).aux $(NAME).pdf
 $(NAME).pdf $(NAME).aux $(NAME).idx : $(NAME).tex $(NAME).sty 
 	#$(TEX) $(NAME).tex | gvim -
 	$(TEX) $(NAME).tex
+	# This checks if a rerun is needed (for .aux file) and reruns
 	while grep 'Rerun to get ' $(NAME).log ; do $(TEX) $< ; done
 
 #$(NAME).html :  all
