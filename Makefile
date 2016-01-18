@@ -23,19 +23,19 @@ clean :
 #	rm -f $(NAME)-*.jpg
 
 
-view : $(NAME).pdf
+view : $(NAME).aux $(NAME).pdf
 	$(PDFVIEWER)  $(NAME).pdf
 
-$(NAME).pdf : $(NAME).tex $(NAME).sty
-	$(TEX) $(NAME).tex | gvim -
+$(NAME).pdf $(NAME).aux $(NAME).idx : $(NAME).tex $(NAME).sty 
+	#$(TEX) $(NAME).tex | gvim -
+	$(TEX) $(NAME).tex
+	while grep 'Rerun to get ' $(NAME).log ; do $(TEX) $< ; done
 
 #$(NAME).html :  all
 
 # $(NAME).bbl $(NAME).blg : $(NAME).bib $(NAME).aux
 # 	$(BIB) $(NAME)
 
-$(NAME).aux : $(NAME).tex  $(NAME).sty
-	$(TEX) $(NAME).tex
 
 # $(NAME).bib : $(NAME).tex
 # 	$(TEX) $(NAME).tex
