@@ -11,6 +11,7 @@ LATEX2PNG = convert -density 200
 .PHONY: all view
 
 all : $(NAME).pdf
+	$(LATEX2PNG)  $(NAME).pdf $(NAME).jpg
 
 clean :
 	rm -f $(NAME).aux
@@ -21,12 +22,11 @@ clean :
 #	rm -f $(NAME)-*.jpg
 
 
-view :
+view : $(NAME).pdf
 	$(PDFVIEWER)  $(NAME).pdf
 
 $(NAME).pdf : $(NAME).tex 
 	$(TEX) $(NAME).tex
-	$(LATEX2PNG)  $(NAME).pdf $(NAME).jpg
 
 
 # $(NAME).bbl $(NAME).blg : $(NAME).bib $(NAME).aux
