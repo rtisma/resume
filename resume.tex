@@ -1,8 +1,8 @@
 \documentclass{article}
-\usepackage{resume}
 
-
-\title{Resume}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   USER DEFINED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def \UserName {Robert Tisma}
 \def \UserEmail {rtisma@gmail.com}
 \def \UserPhone {416 566-8381}
@@ -10,6 +10,10 @@
 \def \UserCity {Mississauga}
 \def \UserProvince {Ontario}
 \def \UserPostalCode {L5R 1N4}
+
+%The above user definitions are usedin the package below
+\usepackage{resume}
+\title{Resume}
 \author{\UserName}
 
 \begin{document}
@@ -17,15 +21,15 @@
 
 % CV Header section
 {\huge{\color{slateblue}\textbf{\UserName}}}\\
-\rule{\textwidth}{0.5mm}\\
+\rule{\textwidth}{0.5mm}
 
 
 % Personal Details section
 \parbox{0.5\textwidth}{
 \begin{tabbing}
-\hspace{3cm} \= \hspace{4cm} \= \kill
-{\bf Address} \> \UserStreetAddress,\\
-\> \UserCity, \UserProvince \\ 
+\hspace{0cm} \= \hspace{4cm} \= \kill
+\> \UserStreetAddress,\\
+\> \UserCity, \UserProvince \\
 \> \UserPostalCode \\
 % Dont want people knowing how old i am for age discriminatio lol  {\bf Date of Birth} \> 4$^{th}$ March 1979 \\
 % {\bf Nationality} \> British
@@ -38,10 +42,8 @@
 \end{tabbing}
 }
 
-
 % Personal profile section
-\section*{Personal Profile}
-
+\section*{Objectives}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer blandit, massa at tincidunt ornare, dolor magna interdum felis, ac blandit urna neque in turpis.
 
 

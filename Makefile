@@ -7,6 +7,7 @@ BIB = bibtex
 NAME = resume
 PDFVIEWER = evince
 LATEX2PNG = convert -density 200
+#LATEX2HTML = 
 
 .PHONY: all view
 
@@ -28,6 +29,7 @@ view : $(NAME).pdf
 $(NAME).pdf : $(NAME).tex 
 	$(TEX) $(NAME).tex
 
+#$(NAME).html :  all
 
 # $(NAME).bbl $(NAME).blg : $(NAME).bib $(NAME).aux
 # 	$(BIB) $(NAME)
