@@ -26,15 +26,15 @@ clean :
 view : $(NAME).pdf
 	$(PDFVIEWER)  $(NAME).pdf
 
-$(NAME).pdf : $(NAME).tex 
-	$(TEX) $(NAME).tex
+$(NAME).pdf : $(NAME).tex $(NAME).sty
+	$(TEX) $(NAME).tex | gvim -
 
 #$(NAME).html :  all
 
 # $(NAME).bbl $(NAME).blg : $(NAME).bib $(NAME).aux
 # 	$(BIB) $(NAME)
 
-$(NAME).aux : $(NAME).tex
+$(NAME).aux : $(NAME).tex  $(NAME).sty
 	$(TEX) $(NAME).tex
 
 # $(NAME).bib : $(NAME).tex
