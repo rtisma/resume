@@ -1,11 +1,14 @@
 % Howard Wilson - 2004
 
+
 % Included packages
 \usepackage[a4paper,hmargin=25mm,vmargin=30mm]{geometry}
 \usepackage{fancyhdr,lastpage}
 \usepackage{color}
 \usepackage{pifont}
 \usepackage{hyperref}
+%\DeclareStringOption[MyFirstName]{MyName}[MyFirstName1]
+
 
 % Colour definitions
 \definecolor{grey}{rgb}{0.5,0.5,0.5}
@@ -21,8 +24,9 @@
 \setlength{\headsep}{0mm}
 
 % Custom footer definition
-\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage\ of
+\fancypagestyle{plain}{\fancyhf{}\lfoot{\UserName\\\UserEmail}\cfoot{\thepage\ of
     \pageref{LastPage}}}
+
 \pagestyle{plain}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
